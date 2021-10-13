@@ -15,14 +15,14 @@ test('Get methods return expected output', () => {
     const employee = new Employee('Luke Michalakis', 1, 'michalakisluke@gmail.com');
 
     //test getName
-    expect(employee.getName().toBe('Luke Michalakis'));
+    expect(employee.getName()).toBe('Luke Michalakis');
 
     //test getId
-    expect(employee.getId().toEqual(1));
+    expect(employee.getId()).toEqual(1);
 
     //test getEmail
-    expect(employee.getEmail().toEqual('michalakisluke@gmail.com'));
+    expect(employee.getEmail()).toEqual('michalakisluke@gmail.com');
 
     //test getRole
-    expect(employee.getRole().toEqual('Employee'));
+    expect(employee.getRole()).toEqual('Employee');
 });
