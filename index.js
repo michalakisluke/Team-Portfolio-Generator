@@ -59,6 +59,7 @@ function createTeam(response) {
             break;
         case "Complete my team":
             console.log(team);
+            //generate html function here
     }
     return team;
 }
@@ -102,7 +103,6 @@ function engineerPrompt() {
     ]).then((answers) => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         team.push(engineer);
-        //console.log(engineer);
         displayMenu();
     });
 }
@@ -133,7 +133,6 @@ function internPrompt() {
     .then((answers) => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
-        //console.log(intern);
         displayMenu();
     });
 }
