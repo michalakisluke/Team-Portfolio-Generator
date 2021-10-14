@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
+const team = [];
 
 // start the application
     // inquirer prompt for team manager information
@@ -43,23 +44,18 @@ function init() {
     ]).then((answers) => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
         console.log(manager);
-        createTeam(); 
+        displayMenu(); 
     });
 }
 
-function createTeam() {
-    const team = [];
+function createTeam(response) {
     // Display the menu with "new engineer" "new intern" "complete my team" options
-
-    const userSelection = displayMenu();
-
-    switch(userSelection) {
+    console.log(response.menu);
+    switch(response.menu) {
         case "Add an engineer":
-            team.push(engineerPrompt());
-            createTeam();
+            engineerPrompt();
         case "Add an intern":
-            team.push(internPrompt());
-            createTeam();
+            internPrompt();
         case "Complete my team":
             console.log(team);
     }
@@ -76,8 +72,8 @@ function displayMenu() {
         }
     ])
     .then(response => {
-        console.log(response);
-    });
+        createTeam(response);
+    })
 }
 
 function engineerPrompt() {
@@ -104,8 +100,9 @@ function engineerPrompt() {
         }
     ]).then((answers) => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+        team.push(engineer);
         console.log(engineer);
-    });
+    }).then(displayMenu());
 }
 
 function internPrompt() {
@@ -133,8 +130,9 @@ function internPrompt() {
     ])
     .then((answers) => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+        team.push(intern);
         console.log(intern);
-    });
+    }).then(displayMenu());
 }
 
 init();
