@@ -56,7 +56,7 @@ function createTeam(response) {
             internPrompt();
             break;
         case "Complete my team":
-            console.log(team);
+            //console.log(team);
             generateHTML();
     }
     return team;
@@ -136,7 +136,20 @@ function internPrompt() {
 }
 
 function generateHTML() {
-    
+    team.forEach(employee => {
+        if (employee.getRole() === "Manager") {
+            console.log('manager');
+            managerHTML(employee);
+        }
+        if (employee.getRole() === "Student") {
+            console.log('intern');
+            internHTML(employee);
+        }
+        if (employee.getRole() === "Engineer") {
+            console.log('engineer')
+            engineerHTML(employee);
+        }
+    }) 
 }
 
 init();
