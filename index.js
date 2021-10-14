@@ -2,6 +2,9 @@ const inquirer = require("inquirer");
 const Manager = require('./lib/Manager');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
+const managerHTML = require('./lib/managerGenHTML');
+const engineerHTML = require('./lib/enginerGenHTML');
+const internHTML = require('./lib/internGenHTML');
 const team = [];
 
 // start the application
