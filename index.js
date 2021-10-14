@@ -42,14 +42,12 @@ function init() {
     ]).then((answers) => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
         team.push(manager);
-        console.log(manager);
         displayMenu(); 
     });
 }
 
 function createTeam(response) {
     // Display the menu with "new engineer" "new intern" "complete my team" options
-    //console.log(response.menu);
     switch(response.menu) {
         case "Add an engineer":
             engineerPrompt();
@@ -59,7 +57,7 @@ function createTeam(response) {
             break;
         case "Complete my team":
             console.log(team);
-            //generate html function here
+            generateHTML();
     }
     return team;
 }
@@ -135,6 +133,10 @@ function internPrompt() {
         team.push(intern);
         displayMenu();
     });
+}
+
+function generateHTML() {
+    
 }
 
 init();
