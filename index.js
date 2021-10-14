@@ -7,8 +7,6 @@ const team = [];
 // start the application
     // inquirer prompt for team manager information
         // create a manager using input from the user
-
-
 // display menu
     // user selects intern or engineer
         // user gets prompted with questions for intern or engineer
@@ -43,6 +41,7 @@ function init() {
         }
     ]).then((answers) => {
         const manager = new Manager(answers.name, answers.id, answers.email, answers.office);
+        team.push(manager);
         console.log(manager);
         displayMenu(); 
     });
@@ -50,12 +49,14 @@ function init() {
 
 function createTeam(response) {
     // Display the menu with "new engineer" "new intern" "complete my team" options
-    console.log(response.menu);
+    //console.log(response.menu);
     switch(response.menu) {
         case "Add an engineer":
             engineerPrompt();
+            break;
         case "Add an intern":
             internPrompt();
+            break;
         case "Complete my team":
             console.log(team);
     }
@@ -101,8 +102,9 @@ function engineerPrompt() {
     ]).then((answers) => {
         const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
         team.push(engineer);
-        console.log(engineer);
-    }).then(displayMenu());
+        //console.log(engineer);
+        displayMenu();
+    });
 }
 
 function internPrompt() {
@@ -131,8 +133,9 @@ function internPrompt() {
     .then((answers) => {
         const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
         team.push(intern);
-        console.log(intern);
-    }).then(displayMenu());
+        //console.log(intern);
+        displayMenu();
+    });
 }
 
 init();
