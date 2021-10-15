@@ -174,8 +174,8 @@ function employeeHTML() {
             genHTML.push(engineerHTML(employee));
         }
     })
-    console.log(genHTML);
-    return genHTML; 
+    //console.log(genHTML);
+    return genHTML.join(''); 
 }
 
 init();
