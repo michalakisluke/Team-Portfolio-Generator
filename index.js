@@ -49,7 +49,8 @@ function createTeam(response) {
         case "Complete my team":
             //console.log(team);
             // I think this should be the function to write the file, right? Then the call would be that function with an argument of the generateHTML() function.
-            console.log(generateHTML());
+            //console.log(team);
+            //console.log(generateHTML());
             writeFile(generateHTML());
     }
     return team;
@@ -158,20 +159,23 @@ function generateHTML() {
 }
 
 function employeeHTML() {
-    return team.forEach(employee => {
-            if (employee.getRole() === "Manager") {
-                console.log(managerHTML(employee));
-                return managerHTML(employee);
-            }
-            if (employee.getRole() === "Student") {
-                console.log(internHTML(employee));
-                return internHTML(employee);
-            }
-            if (employee.getRole() === "Engineer") {
-                console.log(engineerHTML(employee));
-                return engineerHTML(employee);
-            }
-    }) 
+    let genHTML = [];
+    team.forEach(employee => {
+        if (employee.getRole() === "Manager") {
+            //console.log(managerHTML(employee));
+            genHTML.push(managerHTML(employee));
+        }
+        if (employee.getRole() === "Student") {
+            //console.log(internHTML(employee));
+            genHTML.push(internHTML(employee));
+        }
+        if (employee.getRole() === "Engineer") {
+            //console.log(engineerHTML(employee));
+            genHTML.push(engineerHTML(employee));
+        }
+    })
+    console.log(genHTML);
+    return genHTML; 
 }
 
 init();
