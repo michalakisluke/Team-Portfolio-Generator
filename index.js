@@ -158,19 +158,19 @@ function generateHTML() {
 }
 
 function employeeHTML() {
-    team.forEach(employee => {
-        if (employee.getRole() === "Manager") {
-            console.log(managerHTML(employee));
-            return managerHTML(employee);
-        }
-        if (employee.getRole() === "Student") {
-            console.log(internHTML(employee));
-            return internHTML(employee);
-        }
-        if (employee.getRole() === "Engineer") {
-            console.log(engineerHTML(employee));
-            return engineerHTML(employee);
-        }
+    return team.forEach(employee => {
+            if (employee.getRole() === "Manager") {
+                console.log(managerHTML(employee));
+                return managerHTML(employee);
+            }
+            if (employee.getRole() === "Student") {
+                console.log(internHTML(employee));
+                return internHTML(employee);
+            }
+            if (employee.getRole() === "Engineer") {
+                console.log(engineerHTML(employee));
+                return engineerHTML(employee);
+            }
     }) 
 }
 
