@@ -5,6 +5,7 @@ const Engineer = require('./lib/Engineer');
 const managerHTML = require('./lib/managerGenHTML');
 const engineerHTML = require('./lib/engineerGenHTML');
 const internHTML = require('./lib/internGenHTML');
+const writeFile = require('./utils/writeFile');
 const team = [];
 
 function init() {
@@ -47,7 +48,8 @@ function createTeam(response) {
             break;
         case "Complete my team":
             //console.log(team);
-            generateHTML();
+            // I think this should be the function to write the file, right? Then the call would be that function with an argument of the generateHTML() function.
+            writeFile(generateHTML());
     }
     return team;
 }
