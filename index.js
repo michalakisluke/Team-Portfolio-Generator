@@ -147,7 +147,7 @@ function generateHTML() {
         </header>
         <div class = "container">
             <div class = "row">
-                <div class = "team-members col-12">
+                <div class = "team-members d-flex flex-wrap justify-content-center">
                     ${employeeHTML()}
                 </div>
             </div>
