@@ -1,25 +1,33 @@
-GIVEN a command-line application that accepts user input
+# Team Profile Generator
 
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
+  ## Table of Contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions)
+  
+  ## Description
+  This app uses the command console to generate an HTML file of a team roster, using responses from the user
 
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
+  ## Installation
+  For full functionality, the user must run npm install, npm install --save-dev jest, and npm install inquirer
 
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
+  ## Usage
+  To run this application, the user must be in the home directory of the project, and enter "node index.js" to begin the inquirer function. 
 
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
+  ## License
+  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
 
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
+  ## Contributing
+  [michalakisluke](https://github.com/michalakisluke)  
 
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
+  ## Tests
+  To test the constructors, the user must enter npm run test in the home directory.
 
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
+  ## Questions
+  Please reach out to me through github at [michalakisluke](https://github.com/michalakisluke) or by email at michalakisluke@gmail.com
 
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+  
